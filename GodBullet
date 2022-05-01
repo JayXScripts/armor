@@ -1,0 +1,18 @@
+game.Players.LocalPlayer.Character.BodyEffects.Armor:Destroy()
+	Not("God mode set true", 145360599, "God Mode")
+	for i,v in pairs(game.Players:GetPlayers()) do 
+		if v.Name:lower():sub(1,#msg:sub(10)) == msg:sub(10):lower() then
+			local plr = v
+			if plr.Character:FindFirstChild("Humanoid") then
+				if workspace.Players[plr.Name].BodyEffects.Armor.Value > 5 then
+					chat("[Agent] "..plr.Name.." got Armor")
+					Not(plr.Name.." got Armor", 145360599, "Armor Checker")
+				else
+					chat("[Agent] "..plr.Name.." doesn't got Armor")
+					Not(plr.Name.." doesn't got Armor", 145360599, "Armor Checker")
+				end
+				break
+			end
+		end
+	end
+end)
